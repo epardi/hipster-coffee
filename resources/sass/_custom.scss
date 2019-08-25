@@ -1,0 +1,32 @@
+$turquoise: #c7a17a;
+$primary: $turquoise;
+
+$background: #eae7de;
+
+$smoky: #acacac;
+$smoky-invert: findColorInvert($smoky);
+$tan: #c7a17a;
+$dark-button: #151412;
+$dark-button-invert: findColorInvert($dark-button);
+$tan-invert: findColorInvert($tan);
+$navbar-background-color: rgba(21, 20, 18, 1);
+$latte: #d5ac7e;
+
+$custom-colors: (
+	"smoky": ($smoky, $smoky-invert),
+	"dark-navbar": $navbar-background-color,
+	"tan": ($tan, $tan-invert),
+	"dark-button": ($dark-button, $dark-button-invert),
+	"latte": $latte,
+	"dark-background": (#151412),
+	"frappe": #e7bb90,
+	"mocha": #9b5e33
+);
+
+$link-hover: $primary;
+$pagination-current-background-color: $primary;
+$pagination-hover-color: $link-hover;
+$pagination-current-border-color: $link-hover;
+
+$navbar-box-shadow-color: $smoky;
+$footer-background-color: #151412;

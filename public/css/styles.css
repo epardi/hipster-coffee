@@ -1,0 +1,44 @@
+/* 
+.blog-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.blog-img {
+	max-width: 100%;
+}
+
+nav {
+	display: flex;
+	align-items: flex-end;
+}
+.nav-left a {
+	padding-right: 2em;
+}
+
+.nav-right a {
+	padding-right: 2em;
+}  */
+
+/* a {
+	text-decoration: none !important;
+} */
+
+/* .pagination {
+	display: flex;
+	list-style-type: none;
+	justify-content: space-around;
+}
+
+.pagination li {
+	color: white !important;
+	background-color: #3273dc;
+	padding: .5em 1em !important;
+	border-radius: 4px;
+}
+
+.pagination li a {
+	color: white !important;
+} */
