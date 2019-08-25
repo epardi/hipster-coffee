@@ -21,10 +21,10 @@ class CreateCommentsTable extends Migration
             $table->longText('body');
             $table->datetime('published_at')->nullable();
             $table->integer('parent_id')->nullable();
-            $table->integer('post_id')->unsigned();
-            $table->foreign('post_id')->references('id')->on('posts');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->integer('post_id')->unsigned();
+            // $table->foreign('post_id')->references('id')->on('posts');
+            // $table->integer('user_id')->unsigned();
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
