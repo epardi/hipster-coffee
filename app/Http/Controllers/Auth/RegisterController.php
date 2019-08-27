@@ -88,7 +88,6 @@ class RegisterController extends Controller
         ]);
         if ($validator->fails()) {
             request()->session()->put('error', $validator->errors()->first());
-            // Session::flash('error');
             return view('home');
         } else {
             $this->storeImage($user);
@@ -102,9 +101,9 @@ class RegisterController extends Controller
             Storage::delete('public/' . $user->avatar);
         }
         $user->update([
-            'avatar' => request()->image->store('uploads/user', 'public'),
+            'avatar' => request()->image->getRealPath()->store('uploads/user', 'public'),
         ]);
-        $image = Image::make(public_path('storage/' . $user->avatar))->fit(64, 64);
+        $image = Image::make(public_path('storage/' . $user->avatar)->getRealPath())->fit(64, 64);
         $image->save();
     }
 
