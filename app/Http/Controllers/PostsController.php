@@ -95,7 +95,8 @@ class PostsController extends Controller
     {
         if (request()->has('image')) {
             $post->update([
-                'image' => request()->image->store('uploads/post', 'public'),
+                // 'image' => request()->image->store('uploads/post', 'public'),
+                'image' => request()->image->store(public_path('storage/uploads/post'), 'public'),
             ]);
         }
     }
