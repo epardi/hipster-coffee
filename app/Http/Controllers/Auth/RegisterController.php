@@ -101,8 +101,7 @@ class RegisterController extends Controller
             Storage::delete('public/' . $user->avatar);
         }
         $user->update([
-            // 'avatar' => request()->image->store('uploads/user', 'public'),
-            'avatar' => request()->image->store(public_path('storage/uploads/user'), 'public'),
+            'avatar' => request()->image->store('uploads/user', 'public'),
         ]);
         $image = Image::make(public_path('storage/' . $user->avatar))->fit(64, 64);
         $image->save();
