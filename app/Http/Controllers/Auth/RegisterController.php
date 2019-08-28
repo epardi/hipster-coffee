@@ -103,7 +103,8 @@ class RegisterController extends Controller
         $user->update([
             'avatar' => request()->image->store('uploads/user', 'public'),
         ]);
-        $image = Image::make('public/storage/' . $user->avatar)->fit(64, 64);
+        // $image = Image::make('public/storage/' . $user->avatar)->fit(64, 64);
+        $image = Image::make(storage_path('app/public/') . $user->avatar)->fit(64, 64);
         $image->save();
     }
 
