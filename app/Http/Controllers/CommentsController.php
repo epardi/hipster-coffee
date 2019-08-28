@@ -26,6 +26,7 @@ class CommentsController extends Controller
         $comments = $post->comments()->get();
         $commentsCount = Comment::where('post_id', $post->id)->get()->count();
         $sortMethod = request()->sortBy;
+        $user = User::find(Auth::id());
         switch ($sortMethod) {
             case 'Most Replies':
                 $comments = $comments->sortByDesc(function ($comment) {
@@ -41,7 +42,7 @@ class CommentsController extends Controller
             default:
                 break;
         }
-        return view('posts.show', compact('post', 'comments', 'commentsCount'));
+        return view('posts.show', compact('user', 'post', 'comments', 'commentsCount'));
     }
 
     /**

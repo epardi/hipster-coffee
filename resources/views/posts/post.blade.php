@@ -2,7 +2,7 @@
  <img class="image" src="{{ asset('/storage/' . $post->image) }}" alt="">
 @endif
 <p class="title is-4 has-padding-top-30">
-    @if(request()->is('posts/' . $post->slug))
+    @if(request()->is('posts/' . $post->slug) || request()->is('posts/' . $post->slug . '/*'))
         <span class="title is-uppercase">
             {{ $post->title }}
         </span>
@@ -17,7 +17,7 @@
         <p class="level-item">{{ $post->views }} {{ $post->views == 1 ? 'View' : 'Views' }}</p>
     </div>
     <div class="level-right">
-        @if(request()->is('posts/' . $post->slug))
+        @if(request()->is('posts/' . $post->slug) || request()->is('posts/' . $post->slug . '/*'))
             <form name="likes-form" action="{{ route('update-likes', ['post' => $post]) }}" class="level-item control" method="POST">
                 @method('PATCH')
                 <fieldset 
@@ -74,7 +74,7 @@
         @endif
     </div>        
 </div>
-@if(request()->is('posts/' . $post->slug))
+@if(request()->is('posts/' . $post->slug) || request()->is('posts/' . $post->slug . '/*'))
     <progress class="progress is-small is-tan has-width-200 is-pulled-right" value="{{ $post->likes->count() }}" max="{{ $post->likes->count() + $post->dislikes->count() }}">{{ $post->likes->count() }}</progress><br />
 @endif
     <div class="level has-padding-top-15">
@@ -97,6 +97,6 @@
 <div class="content">
     <p>{!! str_replace(array("\r", "\n", "\r\n"), "<br />", $post->body) !!}</p>
 </div>
-@if(request()->is('posts/' . $post->slug))
+@if(request()->is('posts/' . $post->slug) || request()->is('posts/' . $post->slug . '/*'))
     @include('posts.social-media-icons')
 @endif
