@@ -64,7 +64,7 @@
             }
         }
         .hours {
-            background: url('storage/home/home-img-3.jpg') center center no-repeat;
+            background: url('../../storage/home/home-img-3.jpg') center center no-repeat;
             background-size: cover;
             padding: 1rem;
         }
