@@ -141,6 +141,7 @@ class PostsController extends Controller
     public function update(Post $post, Request $request)
     {
         $post->update($this->validateRequest());
+        $post->update(['slug' => Str::slug($post->title),]);
         $this->storeImage($post);
         // Get the tag names from the hidden input.
         $tags = array_filter(Tag::all()->all(), function ($tag) {
