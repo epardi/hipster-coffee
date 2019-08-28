@@ -15,8 +15,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // $table->unsignedBigInteger('post_id')->nullable();
-            // $table->foreign('post_id')->references('id')->on('posts')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('avatar')->nullable();

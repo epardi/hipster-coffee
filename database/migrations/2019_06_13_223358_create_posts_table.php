@@ -22,8 +22,6 @@ class CreatePostsTable extends Migration
             $table->longtext('body');
             $table->datetime('published_at')->nullable();
             $table->unsignedInteger('views')->default(0);
-            // $table->unsignedBigInteger('user_id')->nullable();
-            // $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }
