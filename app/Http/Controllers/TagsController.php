@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
-use Arr;
-use App\Post;
 use Illuminate\Support\Facades\Validator;
 
 class TagsController extends Controller
@@ -57,9 +55,6 @@ class TagsController extends Controller
             }
         }
 
-        // $newTagName = Tag::create($this->validateRequest());
-        // $tag = Tag::create($this->validateRequest());
-
         return redirect('/tags');
     }
 
@@ -70,7 +65,6 @@ class TagsController extends Controller
                 'required',
                 function ($name, $value, $uniqueFail) {
                     $newTagNames = explode(',', request()->name);
-                    $tagNames = Tag::all()->pluck('name')->all();
                     if ($newTagNames !== array_unique($newTagNames)) {
                         $uniqueFail('The new tags must be unique.');
                     }
