@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Coffeeshop Tags')
+@section('title', 'Hipster Coffee Tags')
 
 @section('content')
 

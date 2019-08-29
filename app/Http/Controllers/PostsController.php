@@ -69,6 +69,9 @@ class PostsController extends Controller
         $this->storeImage($post);
 
         $posts = Post::paginate(5);
+        $posts->each(function ($post) {
+            $post->body = Str::limit($post->body, 300, '...');
+        });
         $tags = array_filter(Tag::all()->all(), function ($tag) {
             // Get the tag names from the hidden input
             $strTags = request()->tagList;
@@ -78,7 +81,7 @@ class PostsController extends Controller
         $tagIds = Arr::pluck($tags, 'id');
 
         $post->tags()->sync($tagIds, false);
-
+        $tags = Tag::all();
         return view('posts.index', compact('posts', 'tags'));
     }
 

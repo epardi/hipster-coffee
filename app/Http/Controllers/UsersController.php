@@ -7,6 +7,7 @@ use App\Post;
 use App\Comment;
 use Illuminate\Http\Request;
 use Storage;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -95,6 +96,7 @@ class UsersController extends Controller
         }
         $comments = $post->comments;
         $commentsCount = Comment::where('post_id', $post->id)->get()->count();
+        Auth::logout();
         return view('posts.show', compact('post', 'comments', 'commentsCount', 'user'));
     }
 }

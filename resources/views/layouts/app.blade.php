@@ -38,7 +38,6 @@
                             <a href="{{ url('/about') }}" class="navbar-item has-text-white has-background-dark-navbar">About</a>
                             <a href="{{ url('/contact') }}" class="navbar-item has-text-white has-background-dark-navbar">Contact</a>
                         </div>
-
                         <div class="navbar-end">
                             @if (!auth()->user())
                                 <a class="navbar-item has-text-white has-background-dark-navbar" href="{{ route('login') }}">Login</a>

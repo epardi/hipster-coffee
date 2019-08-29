@@ -144,11 +144,12 @@ class CommentsController extends Controller
     {
         $post = Post::find($postId);
         $comment = Comment::find($commentId);
+        $user = User::find(Auth::id());
 
         $comment->update($this->validateRequest());
         $comments = $post->comments;
         $commentsCount = Comment::where('post_id', $post->id)->get()->count();
-        return view('posts.show', compact('post', 'comments', 'commentsCount'));
+        return view('posts.show', compact('user', 'post', 'comments', 'commentsCount'));
     }
 
     /**
