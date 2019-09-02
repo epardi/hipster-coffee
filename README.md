@@ -1,4 +1,4 @@
-# hipster-coffee
+# https://hipster-coffee.com
 
 
 This project is another clone of a theme I found: https://barista.edge-themes.com. It’s the first full-stack project I’ve attempted, and also the first time I’ve set up the hosting environment and registered a domain name for a site. For the back end, I used the “LEMP” stack (Linux Ubuntu, Nginx, MySQL, and PHP). I’m hosting it through Digital Ocean, and I got the domain name on GoDaddy.com. I decided to use the Laravel framework since it seems to be pretty popular, has a lot of helpful features, and encourages some best practices. On the front end, I tried the Bulma CSS framework; it utilizes flexbox, which is good for responsiveness, comes with no JavaScript so perhaps less unnecessary code, and I just thought it would be more productive to use a framework rather than write all the HTML/CSS from scratch. I also wrote a bit of vanilla JavaScript to make some of these Bulma components functional.
